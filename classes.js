@@ -1,8 +1,7 @@
 
 
 //create a base robot function
-var Robot = {}
-Robot = function(name, type, model) {
+function Robot(name, type, model) {
 	this.name = null;
 	this.type = null;
 	this.model = null;
@@ -15,35 +14,35 @@ Robot = function(name, type, model) {
 		return this.name;
 	}
 }
-//Types
-//1. Aerial
-//2. Water
-//3. Land
-
-// Robot.prototype.Aerial = function () {
-// 	this.type = aerial;
-// }
-
-
-Robot.prototype.aerialType = function() {
-	this.type = aerial;
-	this.health + 20;
-}
-
-function(type, health) {
-	this.type = aerial;
-	this.health + 20;
-}
-
-Aerial.prototype = new Robot()
-
-// Robot.prototype.Aerial = new Robot();
-// Robot.prototype.Aerial = new Robot();
-
-var evilBot = new Aerial()
-console.log(evilBot.type)
-
 //define 3 robot type functions
+//1. Aerial
+
+function Aerial() {
+	this.type = "aerial";
+	this.health + 20;
+}
+Aerial.prototype = new Robot();
+//2. Water
+function Water() {
+	this.type = "water";
+}
+
+Water.prototype = new Robot();
+//3. Land
+function Land() {
+	this.type = "land";
+	this.health - 20;
+}
+
+Land.prototype = new Robot();
+//***********************************
+
+// var evilBot = new Aerial();
+// var roboSatan = new Land();
+// var fluffyBot = new Water();
+// console.log(evilBot, roboSatan, fluffyBot)
+
+
 
 //EvilBot
 //RoboSatan
