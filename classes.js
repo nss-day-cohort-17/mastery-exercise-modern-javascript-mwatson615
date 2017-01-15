@@ -50,15 +50,19 @@ function RoboSatan() {
 	this.health = getRandomNumber(80, 120);
 	this.inflictDamage = getRandomNumber(5, 15);
 	this.model = "RoboSatan";
+	this.weapon = "Vicious Taunting";
 }
 RoboSatan.prototype = new Aerial();
+var robosatan = new RoboSatan();
 
 function Evilbot() {
 	this.health = getRandomNumber(70, 130);
 	this.inflictDamage = getRandomNumber(2, 20);
 	this.model = "Evilbot";
+	this.weapon = "Evil Eye";
 }
 Evilbot.prototype = new Aerial();
+var evilbot = new Evilbot();
 
 // *********************************
 //Land Type Models
@@ -67,14 +71,19 @@ function Irritabot() {
 	this.health = getRandomNumber(90, 110);
 	this.inflictDamage = getRandomNumber(5, 20);
 	this.model = "Irritabot";
+	this.weapon = "Scowling";
 }
 Irritabot.prototype = new Land();
+var irritabot = new Irritabot();
 
 function Surlybot() {
 	this.health = getRandomNumber(75, 100);
 	this.inflictDamage = getRandomNumber(15, 20);
 	this.model = "Surlybot";
+	this.weapon = "Snarky Remarks";
 }
+Surlybot.prototype = new Land();
+var surlybot = new Surlybot();
 
 //**********************************
 //Water Type Models
@@ -83,12 +92,17 @@ function Fluffy() {
 	this.health = getRandomNumber(50, 150);
 	this.inflictDamage = getRandomNumber(5, 50);
 	this.model = "Fluffy";
+	this.weapon = "Cuddling";
 }
 Fluffy.prototype = new Water();
+var fluffy = new Fluffy();
 
 function Kittybot() {
 	this.health = getRandomNumber(75, 125);
 	this.inflictDamage = getRandomNumber(10, 30);
 	this.model = "Kittybot";
+	this.weapon = "Claw Fury"
+
 }
 Kittybot.prototype = new Water();
+var kittybot = new Kittybot();
