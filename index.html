@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Robot Mastery</title>
-	<style type="text/css" src="/bower_components/bootstrap/dist/css/bootstrap.css"></style>
-	<style type="text/css" src="style.css"></style>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="container-fluid">
@@ -13,8 +13,8 @@
 				<h1>Robot Battle</h1>
 			</nav>
 			<div class="setup-card card">
-				<div class="player-info">
-					<div class="form-group col-md-3">
+				<div class="player-info col-md-3">
+					<div class="form-group">
 						<label for="#playerNameInput">Player Name</label>
 						<input type="text" class="form-control" id="playerNameInput" placeholder="Player Name...">
 					</div>
@@ -23,23 +23,23 @@
 
 					</select>
 				</div>
-				<div class="opponent-name">
-					<div class="form-group col-md-3">
+				<div class="opponent-name col-md-3">
+					<div class="form-group">
 						<label for="#opponentNameInfo">Opponent Name</label>
 						<input type="text" class="form-control" id="opponentNameInfo" placeholder="Opponent Name...">
 					</div>
 					<label for="#opponentClasses">Select Your Opponent Robot</label>
 					<select class="opponentClasses" id="opponentClasses">
-						
+
 					</select>
 				</div>
 				<div>
-					<button class="submit">Battle!</button>
+					<button class="submit btn btn-default" type="submit">Battle!</button>
 				</div>
 			</div>
 			<div class="battle-card card hidden">
 				<h2>Fight!</h2>
-				<button class="btn btn-danger">Attack!</button>
+				<button class="btn btn-danger attackbtn">Attack!</button>
 			</div>
 
 		</div>

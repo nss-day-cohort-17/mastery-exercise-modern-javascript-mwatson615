@@ -5,21 +5,24 @@ var newPlayerName = $('#playerNameInput').val();
 var opponentName = $('#opponentNameInfo').val();
 
 var newPlayerClass;
-var robotArray;
+var robotArray = [robosatan, evilbot, irritabot, surlybot, fluffy, kittybot];
 
 //when UI first loads, provide 2 text inputs to name the robots for battle
 
 //provide a select element under each text input to select one of the 6
 //defined robot models
 
-// function selectRobot(robots) {
-// 	for(i = 0; i < robots.length; i++) {
-// 		var selectRobot += 
-// 	}
+function selectRobot() {
+	for(i = 0; i < robotArray.length; i++) {
+		// var robotOptions = '<option>'
+		 $('.playerClasses').append('<option> ${robotArray[i].model} </option>');
+		 // .after(${robotArray[i]});
+console.log(robotArray[i]);
+	}
 
-// }
-console.log(kittybot)
+}
 
+selectRobot();
 //create an attack! button
 	//when clicked, applies the damage output to opponent
 
