@@ -14,6 +14,7 @@ function Robot(name, type, model) {
 }
 function getRandomNumber(lower, upper) {
 	var randomNumber = Math.floor(Math.random() * (upper - lower + 1) + lower);
+	return randomNumber;
 }
 
 //define 3 robot type functions
@@ -46,9 +47,9 @@ Land.prototype = new Robot();
 //Aerial Type Models
 
 function RoboSatan() {
-	this.health = getRandomNumber(80, 120)
-	this.inflictDamage = getRandomNumber(5, 15)
-	this.model = "RoboSatan"
+	this.health = getRandomNumber(80, 120);
+	this.inflictDamage = getRandomNumber(5, 15);
+	this.model = "RoboSatan";
 }
 RoboSatan.prototype = new Aerial();
 
