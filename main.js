@@ -15,8 +15,9 @@ var robotArray = [robosatan, evilbot, irritabot, surlybot, fluffy, kittybot];
 function selectRobot() {
 	for(i = 0; i < robotArray.length; i++) {
 		// var robotOptions = '<option>'
-		 $('.playerClasses').append('<option> ${robotArray[i].model} </option>');
+		 $('.playerClasses').append(`<option> ${robotArray[i].model} </option>`);
 		 // .after(${robotArray[i]});
+		 $('.opponentClasses').append(`<option> ${robotArray[i].model} </option>`);
 console.log(robotArray[i]);
 	}
 
