@@ -5,9 +5,7 @@ function Robot(name, type, model) {
 	this.name = null;
 	this.type = null;
 	this.model = null;
-	this.specialPower = null;
 	this.inflictDamage = null;
-	this.takeDamage = null;
 	this.health = null;
 
 	this.toString = function() {
@@ -50,12 +48,14 @@ Land.prototype = new Robot();
 function RoboSatan() {
 	this.health = getRandomNumber(80, 120)
 	this.inflictDamage = getRandomNumber(5, 15)
+	this.model = "RoboSatan"
 }
 RoboSatan.prototype = new Aerial();
 
 function Evilbot() {
 	this.health = getRandomNumber(70, 130);
 	this.inflictDamage = getRandomNumber(2, 20);
+	this.model = "Evilbot";
 }
 Evilbot.prototype = new Aerial();
 
@@ -65,12 +65,14 @@ Evilbot.prototype = new Aerial();
 function Irritabot() {
 	this.health = getRandomNumber(90, 110);
 	this.inflictDamage = getRandomNumber(5, 20);
+	this.model = "Irritabot";
 }
 Irritabot.prototype = new Land();
 
 function Surlybot() {
 	this.health = getRandomNumber(75, 100);
 	this.inflictDamage = getRandomNumber(15, 20);
+	this.model = "Surlybot";
 }
 
 //**********************************
@@ -79,18 +81,13 @@ function Surlybot() {
 function Fluffy() {
 	this.health = getRandomNumber(50, 150);
 	this.inflictDamage = getRandomNumber(5, 50);
+	this.model = "Fluffy";
 }
 Fluffy.prototype = new Water();
 
 function Kittybot() {
 	this.health = getRandomNumber(75, 125);
 	this.inflictDamage = getRandomNumber(10, 30);
+	this.model = "Kittybot";
 }
 Kittybot.prototype = new Water();
-
-
-
-
-//EvilBot
-//RoboSatan
-//FluffyBot
