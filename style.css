@@ -2,8 +2,16 @@ h1 {
 	text-align: center;
 }
 
-body {
+.setup-card {
 	background: slategrey;
+	background-size: cover;
 }
 
-.battle-
+.battlebtn {
+	margin-top: 10%;
+}
+
+.battle-card {
+	background: green;
+	background-size: cover;
+}

@@ -1,8 +1,9 @@
 console.log("hi");
 
-var newPlayer = new Robot;
-var newPlayerName = $('#playerNameInput').val();
-var opponentName = $('#opponentNameInfo').val();
+var newPlayer;
+var newOpponent;
+
+
 
 var newPlayerClass;
 var robotArray = [robosatan, evilbot, irritabot, surlybot, fluffy, kittybot];
@@ -12,18 +13,40 @@ var robotArray = [robosatan, evilbot, irritabot, surlybot, fluffy, kittybot];
 //provide a select element under each text input to select one of the 6
 //defined robot models
 
-function selectRobot() {
+function createOptions() {
 	for(i = 0; i < robotArray.length; i++) {
 		// var robotOptions = '<option>'
-		 $('.playerClasses').append(`<option> ${robotArray[i].model} </option>`);
+		 $('.playerClasses').append(`<option>${robotArray[i].model}</option>`);
 		 // .after(${robotArray[i]});
-		 $('.opponentClasses').append(`<option> ${robotArray[i].model} </option>`);
-console.log(robotArray[i]);
+		 $('.opponentClasses').append(`<option>${robotArray[i].model}</option>`);
+// console.log(robotArray[i]);
 	}
+
+
+}
+createOptions();
+//get name input and robot model to proceed to battle
+//which Robot selected
+
+function selectRobots() {
+	var playerName = $('#playerNameInput').val();
+	var opponentName = $('#opponentNameInfo').val();
+	var playerRobot = $('.playerClasses').val();
+	var opponentRobot = $('.opponentClasses').val();
+	
+	// console.log(playerName + playerRobot + opponentName + opponentRobot);
+
 
 }
 
-selectRobot();
+$('.battlebtn').click(function() {
+	console.log("battle")
+	$('setup-card').addClass('hidden');
+	$('battle-card').removeClass('hidden');
+	selectRobots();
+
+})
+
 //create an attack! button
 	//when clicked, applies the damage output to opponent
 
