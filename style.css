@@ -3,16 +3,17 @@ h1 {
 }
 
 .nav {
-	background-image: url()
-	background-repeat: no-repeat;
-	background-size: ;
-	height: 200px;
-	color: #992323;
+	background: radial-gradient(circle, black, white, slategrey);
+	/*background-repeat: no-repeat;*/
+	/*background-size: ;*/
+	height: 10vh;
+	color: #a00909;
 }
 
 .setup-card {
-	background: slategrey;
-	background-size: cover;
+	background: linear-gradient(135deg, #44444c, #34335b, #0d0c30, #9e9ea3);
+	height: 90vh;
+	color: #cbcad1;
 }
 
 .battlebtn {
