@@ -2,6 +2,14 @@ h1 {
 	text-align: center;
 }
 
+.nav {
+	background-image: url()
+	background-repeat: no-repeat;
+	background-size: ;
+	height: 200px;
+	color: #992323;
+}
+
 .setup-card {
 	background: slategrey;
 	background-size: cover;
