@@ -2,7 +2,6 @@ console.log("hi");
 
 var newPlayer;
 var newOpponent;
-var playerRobotClass = $('.playerClasses').val();
 
 
 
@@ -31,31 +30,36 @@ createOptions();
 
 function selectRobots() {
 	// $('battlebtn').click(function() {
-	var playerName = $('#playerNameInput').val();
+	// var playerName = $('#playerNameInput').val();
 	var opponentName = $('#opponentNameInfo').val();
-	
-	var opponentRobotClass = $('.opponentClasses').val();
-	// console.log(playerRobotClass, opponentRobotClass);
+	// var playerRobotClass = $('.playerClasses').val(); //gets select option
+	var opponentRobotClass = $('.opponentClasses').val(); //gets select option
+
+
 	// })
-// opponentRobot = new Robot.Model()
+// opponentRobot = new Robot()
 // console.log(opponentRobot)
 }
-// selectRobots();
+function createRobots() {
+	var playerRobot = new Robot();
+	playerRobot.model = $('.playerClasses').val();;
+	playerRobot.name = $('#playerNameInput').val();
+
+	console.log(playerRobot)
+	// var opponentRobot = new Robot();
+}
 
 $('.battlebtn').click(function() {
-	for(i = 0; i < robotArray.length; i++) {
-			var playerRobot();
 
-
-		}
-	}
-	// console.log("battle")
+	console.log("battle")
 	$('setup-card').addClass('hidden');
 	$('battle-card').removeClass('hidden');
+	createRobots();
 	selectRobots();
 
 })
-// }
+
+
 
 //create an attack! button
 	//when clicked, applies the damage output to opponent
