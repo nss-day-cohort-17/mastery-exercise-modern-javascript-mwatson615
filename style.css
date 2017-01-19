@@ -1,11 +1,9 @@
-h1 {
+body {
 	text-align: center;
 }
 
 .nav {
 	background: radial-gradient(circle, black, white, slategrey);
-	/*background-repeat: no-repeat;*/
-	/*background-size: ;*/
 	height: 10vh;
 	color: #a00909;
 }
@@ -22,6 +20,12 @@ h1 {
 }
 
 .battle-card {
-	background: green;
-	background-size: cover;
+	background: linear-gradient(65deg, #cad1d0, #7eb7b0, #39514e, #187568);
+	height: 90vh;
+	color: #3091db;
+	padding-top: 15px;
+}
+
+.attackbtn {
+	margin-top: 10%;
 }

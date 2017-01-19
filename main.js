@@ -2,7 +2,8 @@ console.log("hi");
 
 var newPlayer;
 var newOpponent;
-
+// var attackTimeout = setTimeout(inflictDamage, 1500);
+// var damageTimeout = setTimeout(takeDamage, 1750)
 
 
 var newPlayerClass;
@@ -45,21 +46,47 @@ function createRobots() {
 	playerRobot.model = $('.playerClasses').val();;
 	playerRobot.name = $('#playerNameInput').val();
 
-	console.log(playerRobot)
-	// var opponentRobot = new Robot();
+	var opponentRobot = new Robot();
+	opponentRobot.model = $('.opponentClasses').val();
+	opponentRobot.name = $('#opponentNameInfo').val();
+
+	// console.log(opponentRobot)
 }
 
 $('.battlebtn').click(function() {
 
 	console.log("battle")
-	$('setup-card').addClass('hidden');
-	$('battle-card').removeClass('hidden');
-	createRobots();
-	selectRobots();
+	$('.setup-card').addClass('hidden');
+	$('.battle-card').removeClass('hidden');
+	// createRobots();
+	// selectRobots();
 
 })
 
 
+
+// function inflictDamage() {
+// 	var opponentHealth = opponentRobot.health - playerRobot.inflictDamage;
+// 	$('attackbtn').prop('disabled', true);
+// 	setTimeout(function() {
+// 		$('attackbtn').prop('disabled', false);
+// 	}, 1500)
+// 	if (opponentHealth < 0) {
+// 		$('playerWin').removeClass('hidden');
+// 	}
+// }
+
+// $('attackbtn').click(inflictDamage);
+
+
+// function takeDamage() {
+// 	var playerHealth = playerRobot.health - opponentRobot.inflictDamage;
+// 	takeDamage;
+// 	if (playerHealth < 0) {
+// 		$('opponentWin').removeClass('hidden');
+
+// 	}
+// }
 
 //create an attack! button
 	//when clicked, applies the damage output to opponent
