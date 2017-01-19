@@ -35,61 +35,56 @@ function selectRobots() {
 	var opponentName = $('#opponentNameInfo').val();
 	// var playerRobotClass = $('.playerClasses').val(); //gets select option
 	var opponentRobotClass = $('.opponentClasses').val(); //gets select option
-
-
-	// })
-// opponentRobot = new Robot()
-// console.log(opponentRobot)
 }
+
 function createRobots() {
-	var playerRobot = new Robot();
-	playerRobot.model = $('.playerClasses').val();;
+	var playerSelect = $('.playerClasses').val();
+	var playerRobot = new modelObj[playerSelect]()
+	// var playerRobot = new Robot[]();
+	// playerRobot.model = $('.playerClasses').val();;
 	playerRobot.name = $('#playerNameInput').val();
 
 	var opponentRobot = new Robot();
 	opponentRobot.model = $('.opponentClasses').val();
 	opponentRobot.name = $('#opponentNameInfo').val();
 
-	// console.log(opponentRobot)
+	console.log(playerRobot)
 }
 
 $('.battlebtn').click(function() {
-
 	console.log("battle")
 	$('.setup-card').addClass('hidden');
 	$('.battle-card').removeClass('hidden');
-	// createRobots();
-	// selectRobots();
+	createRobots();
+	selectRobots();
 
 })
 
-
-
-// function inflictDamage() {
-// 	var opponentHealth = opponentRobot.health - playerRobot.inflictDamage;
-// 	$('attackbtn').prop('disabled', true);
-// 	setTimeout(function() {
-// 		$('attackbtn').prop('disabled', false);
-// 	}, 1500)
-// 	if (opponentHealth < 0) {
-// 		$('playerWin').removeClass('hidden');
-// 	}
-// }
-
-// $('attackbtn').click(inflictDamage);
-
-
-// function takeDamage() {
-// 	var playerHealth = playerRobot.health - opponentRobot.inflictDamage;
-// 	takeDamage;
-// 	if (playerHealth < 0) {
-// 		$('opponentWin').removeClass('hidden');
-
-// 	}
-// }
-
-//create an attack! button
-	//when clicked, applies the damage output to opponent
-
 //once either robot's health is less than 0, display a message that the battle is over
 //message says who won and if possible, with what implement
+
+function inflictDamage() {
+	var opponentHealth = opponentRobot.health - playerRobot.inflictDamage;
+console.log("attack")
+$('.announcements').append(`<p>${playerRobot.name} attacks ${opponentRobot.name} for ${playerRobot.inflictDamage} damage</p>`)
+
+	if (opponentHealth < 0) {
+		$('.announcements').append(`<p>${playerRobot.name} destroys ${opponentRobot.name} with ${playerRobot.weapon}</p>`)
+	}
+}
+//create an attack! button
+	//when clicked, applies the damage output to opponent
+$('.attackbtn').click((e) => {
+	inflictDamage();
+});
+
+
+function takeDamage() {
+	var playerHealth = playerRobot.health - opponentRobot.inflictDamage;
+	$('.announcements').append(`<p>${opponentRobot.name} attacks ${playerRobot.name} for ${opponentRobot.inflictDamage} damage</p>`)
+	if (playerHealth < 0) {
+		$('.opponentWin').removeClass('hidden');
+		$('.announcements').append(`<p>${opponentRobot.name} destroys ${playerRobot.name} with ${opponentRobot.weapon}</p>`)
+
+	}
+}

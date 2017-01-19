@@ -1,12 +1,12 @@
-
+var modelObj = {}
 
 //create a base robot function
-function Robot(name, type, model) {
+function Robot(name) {
 	this.name = null;
-	this.type = null;
-	this.model = null;
-	this.inflictDamage = null;
-	this.health = null;
+	// this.type = null;
+	// this.model = null;
+	// this.inflictDamage = null;
+	// this.health = null;
 
 	this.toString = function() {
 		return this.name;
@@ -22,18 +22,18 @@ function getRandomNumber(lower, upper) {
 
 //1. Aerial
 
-function Aerial() {
+function Aerial(type) {
 	this.type = "aerial";
 }
 Aerial.prototype = new Robot();
 //2. Water
-function Water() {
+function Water(type) {
 	this.type = "water";
 }
 
 Water.prototype = new Robot();
 //3. Land
-function Land() {
+function Land(type) {
 	this.type = "land";
 }
 
@@ -45,64 +45,63 @@ Land.prototype = new Robot();
 //give each robot model a unique range of damage
 
 //Aerial Type Models
-
-function RoboSatan() {
+modelObj.RoboSatan = function (health, inflictDamage, model, weapon) {
 	this.health = getRandomNumber(80, 120);
 	this.inflictDamage = getRandomNumber(5, 15);
 	this.model = "RoboSatan";
 	this.weapon = "Vicious Taunting";
 }
-RoboSatan.prototype = new Aerial();
-var robosatan = new RoboSatan();
+modelObj.RoboSatan.prototype = new Aerial();
+var robosatan = new modelObj.RoboSatan();
 
-function Evilbot() {
+modelObj.Evilbot = function (health, inflictDamage, model, weapon) {
 	this.health = getRandomNumber(70, 130);
 	this.inflictDamage = getRandomNumber(2, 20);
 	this.model = "Evilbot";
 	this.weapon = "Evil Eye";
 }
-Evilbot.prototype = new Aerial();
-var evilbot = new Evilbot();
+modelObj.Evilbot.prototype = new Aerial();
+var evilbot = new modelObj.Evilbot();
 
 // *********************************
 //Land Type Models
 
-function Irritabot() {
+modelObj.Irritabot = function (health, inflictDamage, model, weapon) {
 	this.health = getRandomNumber(90, 110);
 	this.inflictDamage = getRandomNumber(5, 20);
 	this.model = "Irritabot";
 	this.weapon = "Scowling";
 }
-Irritabot.prototype = new Land();
-var irritabot = new Irritabot();
+modelObj.Irritabot.prototype = new Land();
+var irritabot = new modelObj.Irritabot();
 
-function Surlybot() {
+modelObj.Surlybot = function (health, inflictDamage, model, weapon) {
 	this.health = getRandomNumber(75, 100);
 	this.inflictDamage = getRandomNumber(15, 20);
 	this.model = "Surlybot";
 	this.weapon = "Snarky Remarks";
 }
-Surlybot.prototype = new Land();
-var surlybot = new Surlybot();
+modelObj.Surlybot.prototype = new Land();
+var surlybot = new modelObj.Surlybot();
 
 //**********************************
 //Water Type Models
 
-function Fluffy() {
+modelObj.Fluffy = function (health, inflictDamage, model, weapon) {
 	this.health = getRandomNumber(50, 150);
 	this.inflictDamage = getRandomNumber(5, 50);
 	this.model = "Fluffy";
 	this.weapon = "Cuddling";
 }
-Fluffy.prototype = new Water();
-var fluffy = new Fluffy();
+modelObj.Fluffy.prototype = new Water();
+var fluffy = new modelObj.Fluffy();
 
-function Kittybot() {
+modelObj.Kittybot = function (health, inflictDamage, model, weapon) {
 	this.health = getRandomNumber(75, 125);
 	this.inflictDamage = getRandomNumber(10, 30);
 	this.model = "Kittybot";
 	this.weapon = "Claw Fury"
 
 }
-Kittybot.prototype = new Water();
-var kittybot = new Kittybot();
+modelObj.Kittybot.prototype = new Water();
+var kittybot = new modelObj.Kittybot();
