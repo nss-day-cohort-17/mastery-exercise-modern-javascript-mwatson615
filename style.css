@@ -1,0 +1,39 @@
+body {
+	text-align: center;
+}
+
+.nav {
+	background: radial-gradient(circle, black, white, slategrey);
+	height: 10vh;
+	color: #a00909;
+}
+
+.setup-card {
+	background: linear-gradient(135deg, #44444c, #34335b, #0d0c30, #9e9ea3);
+	height: 90vh;
+	color: #cbcad1;
+}
+
+.player-info {
+	padding-top: 10%;
+}
+
+.opponent-name {
+	margin-top: 10%;
+}
+
+
+.battlebtn {
+	margin-top: 10%;
+}
+
+.battle-card {
+	background: linear-gradient(65deg, #cad1d0, #7eb7b0, #39514e, #187568);
+	height: 90vh;
+	color: #a00909;
+	padding-top: 15px;
+}
+
+.attackbtn {
+	margin: 10% auto;
+}

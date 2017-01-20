@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Robot Mastery</title>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="nav">
+				<h1>Robot Battle</h1>
+			</nav>
+			<div class="setup-card card">
+				<div class="player-info col-md-6">
+					<div class="form-group">
+						<label for="#playerNameInput">Player Name</label>
+						<input type="text" class="form-control" id="playerNameInput" placeholder="Player Name...">
+					</div>
+					<label for="#playerClasses">Select Your Robot</label>
+					<select class="playerClasses" id="playerClasses">
+
+					</select>
+				</div>
+				<div class="opponent-name col-md-6">
+					<div class="form-group">
+						<label for="#opponentNameInfo">Opponent Name</label>
+						<input type="text" class="form-control" id="opponentNameInfo" placeholder="Opponent Name...">
+					</div>
+					<label for="#opponentClasses">Select Your Opponent Robot</label>
+					<select class="opponentClasses" id="opponentClasses">
+
+					</select>
+				</div>
+				<div class="text-center">
+					<button class="btn btn-warning battlebtn" type="submit">Battle!</button>
+				</div>
+			</div>
+			<div class="battle-card card hidden">
+				<h2>Fight!</h2>
+				<button class="btn btn-danger attackbtn">Attack!</button>
+				<div>
+					<div class="announcements">
+						<!-- <p class="playerWin hidden"></p>
+						<p class="opponentWin hidden"></p> -->
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/classes.js"></script>
+<script type="text/javascript" src="/main.js"></script>
+</body>
+</html>
