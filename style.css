@@ -14,6 +14,14 @@ body {
 	color: #cbcad1;
 }
 
+.player-info {
+	padding-top: 10%;
+}
+
+.opponent-name {
+	margin-top: 10%;
+}
+
 
 .battlebtn {
 	margin-top: 10%;
@@ -22,10 +30,10 @@ body {
 .battle-card {
 	background: linear-gradient(65deg, #cad1d0, #7eb7b0, #39514e, #187568);
 	height: 90vh;
-	color: #3091db;
+	color: #a00909;
 	padding-top: 15px;
 }
 
 .attackbtn {
-	margin-top: 10%;
+	margin: 10% auto;
 }
