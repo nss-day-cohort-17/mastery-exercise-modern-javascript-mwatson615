@@ -4,7 +4,7 @@ var newPlayer;
 var newOpponent;
 // var attackTimeout = setTimeout(inflictDamage, 1500);
 // var damageTimeout = setTimeout(takeDamage, 1750)
-
+let playerHealth;
 
 var newPlayerClass;
 var robotArray = [robosatan, evilbot, irritabot, surlybot, fluffy, kittybot];
@@ -36,46 +36,51 @@ function selectRobots() {
 	// var playerRobotClass = $('.playerClasses').val(); //gets select option
 	var opponentRobotClass = $('.opponentClasses').val(); //gets select option
 }
-
-function createRobots() {
-	var playerSelect = $('.playerClasses').val();
-	var playerRobot = new modelObj[playerSelect]()
-	// var playerRobot = new Robot[]();
-	// playerRobot.model = $('.playerClasses').val();;
-	playerRobot.name = $('#playerNameInput').val();
-
-	var opponentRobot = new Robot();
-	opponentRobot.model = $('.opponentClasses').val();
-	opponentRobot.name = $('#opponentNameInfo').val();
-
-	console.log(playerRobot)
-}
-
 $('.battlebtn').click(function() {
 	console.log("battle")
 	$('.setup-card').addClass('hidden');
 	$('.battle-card').removeClass('hidden');
-	createRobots();
+	createPlayer();
+	createOpponent();
 	selectRobots();
+	battleFunction(createPlayer, createOpponent);
 
 })
 
+function createPlayer() {
+	//create player robot
+	var playerSelect = $('.playerClasses').val();
+	var playerRobot = new modelObj[playerSelect]()
+	playerRobot.name = $('#playerNameInput').val();
+	return playerRobot;
+}
+//create opponent robot
+function createOpponent() {
+	var opponentSelect = $('.opponentClasses').val();
+	var opponentRobot = new modelObj[opponentSelect]();
+	opponentRobot.name = $('#opponentNameInfo').val();
+	return opponentRobot;
+	// console.log(opponentRobot.health)
+}
 //once either robot's health is less than 0, display a message that the battle is over
 //message says who won and if possible, with what implement
+function battleFunction() {
 
 function inflictDamage() {
-	var opponentHealth = opponentRobot.health - playerRobot.inflictDamage;
-console.log("attack")
-$('.announcements').append(`<p>${playerRobot.name} attacks ${opponentRobot.name} for ${playerRobot.inflictDamage} damage</p>`)
+	let opponentHealth = opponentRobot.health -= playerRobot.inflictDamage;
 
-	if (opponentHealth < 0) {
-		$('.announcements').append(`<p>${playerRobot.name} destroys ${opponentRobot.name} with ${playerRobot.weapon}</p>`)
-	}
+
+// $('.announcements').append(`<p>${playerRobot.name} attacks ${opponentRobot.name} for ${playerRobot.inflictDamage} damage</p>`)
+
+// 	if (opponentHealth < 0) {
+// 		$('.announcements').append(`<p>${playerRobot.name} destroys ${opponentRobot.name} with ${playerRobot.weapon}</p>`)
+// 	}
 }
 //create an attack! button
 	//when clicked, applies the damage output to opponent
-$('.attackbtn').click((e) => {
-	inflictDamage();
+$('.attackbtn').click(() => {
+	opponentRobot.health - playerRobot.inflictDamage;
+	console.log(opponentRobot.health)
 });
 
 
@@ -87,4 +92,5 @@ function takeDamage() {
 		$('.announcements').append(`<p>${opponentRobot.name} destroys ${playerRobot.name} with ${opponentRobot.weapon}</p>`)
 
 	}
+}
 }
